@@ -1,0 +1,3 @@
+Seção 1 tem como objetivo apenas introdução do curso e mostrar sua grade curricular.
+Contudo, existe um link onde possui informações sobre conhecimento prévio necessário para começar o curso
+https://devsuperior.com.br/udemy-java-mapa

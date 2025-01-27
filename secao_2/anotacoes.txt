@@ -1,0 +1,130 @@
+Linguagem de programação
+
+É um conjunto de regras léxicas(ortografia) e sintáticas(gramáticas) para se escrever programas.
+
+Léxica diz respeito a correção das palavras "isoladas"(ortografia).
+
+Exemplo (portugues):
+
+Cachorro
+
+caxorro
+--------
+
+
+Na linguagem de programação
+
+main
+
+maim
+------
+
+
+
+Sintática
+
+Diz respeitp a correção das sentenças como um todo(gramática)
+
+Exemplo (portugues)
+
+
+O cachorro está com fome
+
+A cachorro está com fome
+-----------
+
+Embora todas as palavras estarem corretas, no ponto de vista da sentença como um todo, existe o erro de gramática.
+
+Linguagem de programação
+
+x = 2 + y;
+
+x + 2 y;
+-----
+
+
+
+IDE - Ambiente integrado de Desenvolvimento
+
+É um conjunto de softwares utilizado para a construção de programas.
+
+Exemplo:
+
+C/C++ Code blocks
+
+Java: Eclipse, netbeans
+
+C#: Microsoft Visual Studio
+
+-=-=-=-=-==-=--==-=-=-=--==-
+Funcionalidade de uma IDE
+
+Edição de codigo fonte(indentação, autocompletar, destaque de palavras, etc)
+
+Depuração e testes
+
+Construção de produto final(build)
+
+Sugestão de modelos(templates)
+
+Auxilar em várias tarefas do seu projeto
+
+etc.
+
+-=-=-=-==--=-==-=--=-==-=-=-
+
+
+Compilaçao e interpretação codigo fonte e objeto máquina virtual
+
+Código fonte: é aquele escrito pelo programador em uma linguagem de programação
+
+
+Compilação
+É o processo que transforma o código fonte em código objeto
+
+
+processo:
+
+Còdigo fonte -> análise lexica e sintática -> código objeto > geração de código -> código executavel
+
+
+-=--=-=-==-=--=-=
+
+Interpretação
+
+Código fonte -> Análise lexa, sintática, geração de código SOBDEMANDA -> execução
+
+=-=-=-=-=-==--=-=
+
+Abordagem hibrida
+
+Código fonte -> Pré compilação(análise lexa e sintática -> Bytecode -> Máquina virtual: iinterpretação(geração de código SOB DEMANDA) -> execução
+
+Utilizado pelo java(jvm), C#(Microsoft .net framework)
+
+-=--==-=--=-=
+Vantagens
+
+Compilação
+    - Velocidade do programa
+    - Auxilio do compilador antes da execução
+
+Interpretação
+    - Flexibilidade de manutenção do aplicativo em produção
+    - Expressividade da linguagem
+    - Código fonte não precisa ser recompilado para rodar em plataforma diferentes
+    
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
