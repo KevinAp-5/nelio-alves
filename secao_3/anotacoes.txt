@@ -1,0 +1,105 @@
+Entendendo as versões do java
+
+LTS -> Long time support
+
+A oracle mantem algumas versões que são as LTS, onde vão possuir um suporte de grande período, onde essa versões são as mais utilizadas para projetos que visam longo prazo.
+
+=--=-==-=-=--=-=
+
+Java - contextualização
+
+O que é java?
+
+- Linguagem de programação (regras sintáticas)
+
+- Plataforma de desenvolvimento e execução
+    - Bibliotecas (API)
+    - Ambientes de execução
+
+
+Histórico
+
+Problemas resolvidos e motivo de seu sucesso:
+    - Ponteiros / gerenciamento de memória
+    - Portabilidade falha: reescrever parte do código ao mudar de SO
+    - Utilização em dispositivos diversos
+    - Custo
+
+Criada pela Sun Mycrosystems no meio da década de 1990
+
+Adquirida pela Oracle corporation em 2010
+
+
+Aspectos notáveis
+
+- Código compilado para bytecode e executado pela máquina virtual(jvm)
+
+- Portável, segura, robusta
+- Roda em vários tipos de dispositivos
+- Domina o mercado corporativo desde o fim do século 20
+- Padrão android por muitos anos
+
+Edições do java
+
+java ME - Micro edition -> Dispositivos embarcados e móveis Iot
+
+Java SE - Standard Edition - code - desktop e servidores
+
+java EE - Enterprise Edition - Aplicações corporativas.
+
+
+=--=-===--=
+
+Plataforma Java SE
+
+JVM - Java virtual machine
+    - Máquina virtual do java - necessário para executar sistemas java
+    
+Ela é necessária para executar sistemas em java e para desenvolver os aplicativos em java
+
+-==-=-=-=--
+
+Estrutura de uma aplicação java
+
+
+Uma aplicação é composta por classe. Sabemos que java é orientado a objetos, e devido a isso temos as classes
+
+Package = agrupamento lógico de classes relacionadas
+
+Entities
+Services
+Repositories
+
+Todas elas[pacotes] possuem classes dentro.
+
+Módulo(java9+) = Agrupamento lógico de pacotes relacionados
+RUntime = agrupamento fisico
+
+Financial
+    - Entities
+        -classes
+    - Services
+        - classes
+    - REpositories
+        - Classes
+
+Graphics
+    - Graphics32
+        -claases
+    - Graphics2d
+        -classes
+    - Utilities
+        - classes
+
+O agrupamento lógico pode ser compilado e gerado o build desses arquivos
+
+Aplicação = Agrupamento de modulos relacionados
+
+
+
+
+
+
+
+
+
