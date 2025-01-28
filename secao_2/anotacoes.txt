@@ -23,7 +23,7 @@ maim
 
 Sintática
 
-Diz respeitp a correção das sentenças como um todo(gramática)
+Diz respeito a correção das sentenças como um todo(gramática)
 
 Exemplo (portugues)
 
@@ -33,7 +33,7 @@ O cachorro está com fome
 A cachorro está com fome
 -----------
 
-Embora todas as palavras estarem corretas, no ponto de vista da sentença como um todo, existe o erro de gramática.
+Embora todas as palavras estejam corretas, no ponto de vista da sentença como um todo, existe o erro de gramática.
 
 Linguagem de programação
 
@@ -98,7 +98,7 @@ Código fonte -> Análise lexa, sintática, geração de código SOBDEMANDA -> e
 
 Abordagem hibrida
 
-Código fonte -> Pré compilação(análise lexa e sintática -> Bytecode -> Máquina virtual: iinterpretação(geração de código SOB DEMANDA) -> execução
+Código fonte -> Pré compilação(análise lexa e sintática -> Bytecode -> Máquina virtual): iinterpretação(geração de código SOB DEMANDA) -> execução
 
 Utilizado pelo java(jvm), C#(Microsoft .net framework)
 
@@ -115,16 +115,3 @@ Interpretação
     - Código fonte não precisa ser recompilado para rodar em plataforma diferentes
     
 -------
-
-
-
-
-
-
-
-
-
-
-
-
-

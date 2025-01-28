@@ -1,0 +1,236 @@
+Expressões aritméticas
+
+Expressões aritméticas são expressões que quando calculadas vão resultar em um valor numérico.
+
+Operadores aritméticos
+
++
+-
+*
+/
+%
+
+-==--==--=-=
+Variáveis e tipos basicos em java
+
+o programa em execução lida com dados
+
+Como esses dados são armazenados?w
+
+Em variáveis!!
+
+Variáveis
+
+Em programação, uma variável é uma porção da memória(RAM) utilizada para armazenas dados durante a execução dos programas
+
+memória ram
+3  6000.0
+x  salario
+
+  "maria"
+   nome
+
+-==-=-=-=-=-
+
+Declaração de variáveis
+
+Sintaxe:
+<tipo> <nome> = <valor inicial>;
+                 (opcional)
+
+int idade = 21;
+double altura = 1.88;
+char sexo = 'm';
+
+Uma váriavel possui:
+    Nome ou identificador
+    tipo
+    valor
+    endereço
+
+
+Tipo byte
+
+um bit pode armazenar 2 valores possíveis (0 ou 1)
+Cada bit possui 2 possibilidades
+
+8 bits:
+2x2x2x2x2x2x2x2 = 2**8 = 256 possibilidades
+
+
+String = cadeia de caracteres
+
+
+
+Nome de variáveis
+
+Não pode começar com um digito
+Não pode ter espaço em branco
+não usar acentos
+sugestão: usar o pádrão camel case
+
+Na comunidade java adotou-se o padrão de começar o nome das variáveis com letra minusculas
+
+int idadeDoAluno;
+
+
+==--=-=-=-==--=
+As tres operações basicas da programação
+
+entrada - processamento de dados - saída de dados
+
+Escrever texto na tela
+
+Sem quebra de linha
+
+System.out.print("Sem quebra de linha");
+
+Com quebra de linha
+
+System.out.println("com quebra de linha");
+
+
+Escrevar uma variável na tela
+
+System.out.println(minhaVariavel);
+
+
+Como escrever o conteúdo de uma variável de ponto flutuante?
+
+variavel double
+double x = 10.31312;
+
+System.out.printf("%.2f%n", x);
+
+%n = quebra de linha (independente de plataforma)
+
+printf(f = formatado)
+
+O printf pode sair com vírgula ao invés de ponto, isso porque o java pega o padrão do computador. Podemos alterar isso com o
+
+Locale.setDefault(Locale.US); -> Deve ser importado
+
+
+Para concatevar vários elementos em um mesmo comando de escrita
+
+System.out.println("RESULTADO = " + x + " METROS");
+
+System.out.printf("RESULTADO + %.2f metros%n", x);
+
+System.out.printf("%s tem %d anos e ganha R$%.2f reais%n", nome, idade, renda);
+
+
+=--==-====-=--=
+
+Processamento de dados em Java e Casting
+
+Processamento de dados é feito por meio de atribuição
+
+Sintaxe:
+<variável> = <expressão>;
+
+int x, y;
+
+x = 5;
+y = 2 * x;
+
+System.out.println(x);
+System.out.println(y);
+
+------
+int x;
+double y;
+
+x = 5;
+y = 2 * x;
+
+System.out.println(x);
+System.out.println(y); ---> 10.0
+
+Sintaxe casting
+
+resultado = (double) 5 / 2;
+Com isso o compilador irá nos retornar o resultado 2.5, ao invés do resultado inteiro da divisão(2);
+
+
+-----------------------
+Entrada de dados em java
+
+Scanner
+
+para fazer entrada de dados, nós vamos criar um objeto do tipo "Scanner" da seguinte forma:
+
+Scanner scanner = new Scanner(System.in);
+
+Faça um scanner.close() quando não precisar mais do objeto scanner(instancia)
+
+Para ler uma palavra(texto sem espaço)
+
+String x;
+
+x = scanner.next();
+
+E o conteúdo que for digitado será inserado a variável x.
+
+
+scanner.close();
+
+
+-----
+Para ler um número inteiro
+
+int x;
+
+x = scanner.nextInt();
+
+
+-------------
+Para ler um caractere
+
+char x;
+x = scanner.next().charAt(0);
+
+
+-------------
+Para ler dados em uma única linha
+string x;
+int y;
+double z;
+
+-------------------------------
+
+Para ler um texto até a quebra de linha
+scanner.nextLine();
+
+----------
+Atenção: quebra de linha
+
+x = scanner.nextInt().
+frase1 = scanner.nextLine();
+frase2 = scanner.nextLine();
+frase3 = scanner.nextLine();
+
+Quando você usa o comando de leitura diferente do nextLine() e dá alguma quebra de linha, essa quebra de linha fica "pendente" na entrada padrão.
+
+Se você então fizer um nextLine(), aquela quebra de linha pendente, será absorvida pelo nextLine().
+
+Solução:
+Fazer um nextLine() extra, antes de fazer o nextLine() desejado.
+Com isso irá arrumar o buffer de leitura.
+
+
+
+
+
+------------------------
+Funções matemáticas
+
+Algumas funções matemáticas do java
+
+Exemplo:
+A = Math.sqrt(x); -> significado Variável A recebe a raiz quadrada de x
+B = Math.pow(x, y); -> Variável A recebe o resultado de X elevado a y
+C = Math.abs(x); -> Váriável A recebe o valor absoluto de x
+
+-------------------------
+

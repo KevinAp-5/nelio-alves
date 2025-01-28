@@ -1,0 +1,140 @@
+Estrutura condicional
+
+-----------------
+
+Expressões comparativas
+
+são expressões que compararam uma coisa com outra
+
+5 > 10 -> falso
+
+Operadores comparativos
+>  - maior
+<  - menor
+>= - maior ou igual
+<= - menor ou igual
+== - igual
+!= - diferente
+
+exemplos:
+
+x = 5
+
+
+x > 0    --> true
+x == 3   --> false
+10 <= 30 --> true
+x != 2   --> true
+
+---------------------------
+Expressões lógicas
+
+Assim como as expressões comparativas, vai nos resular um verdadeiro ou falso
+-----------
+Operadores lógicos
+&&  -> E
+||  -> OU
+!   -> NÂO
+
+----------
+
+Ideia por trás do operadore "E"
+Você pode obter uma habilidade de motorista se
+
+- For aprovado no exame psicoténico,
+E
+- For aprovado no exame de legislação,
+E
+- For aprovado no exame de direção
+
+Todas as condições devem ser verdadeiras para que o resultado seja verdadeira
+
+x = 5
+Exemplos
+x <= 20 && x == 10 ---> falso
+
+x > 0 && x != 3 ---> verdade
+
+--------------------
+
+Ideia por trás do operador "OU"
+
+Você pode estacionar na vaga especial se:
+- For idoso
+OU
+For uma pessoa com deficiencia
+OU
+For uma gestante
+
+Pelo menos uma condição deve ser verdadeira
+
+Exemplos de expressões
+
+x == 10 || x <= 20
+
+x > 0 || x != 3
+
+Basta apenas uma condição ser verdadeira que será verdade o resultado
+
+---------------------
+
+Ideia por trás do operador "NÂO"
+
+Você tem direito a receber uma bolsa de estudos se você:
+NÂO
+Possuir uma renda maior que R$ 3000
+
+O operador "NÂO" inverte a condição
+
+x = 0
+
+!(x == 10) --> verdade
+!(x >= 2) --> falso
+!(x<=20 && x == 10) --> verdadeiro
+
+-----------------------
+
+Estrutura condicional IF
+
+Conceito:
+
+Estrutura condicional:
+
+É uma estrutura de controle que permite definir que um certo bloco de comandos somente será executado dependendo de uma condição.
+
+if (condicao) {
+    <comando>
+}
+
+if (condicao) {
+    <comando>
+}
+else {
+    <comando else>
+}
+
+if (hora < 12) {
+   System.out.println("BOM DIA");   
+}
+
+
+Encadeamento de estruturas condicionais
+
+if (hora < 12) {
+    bom dia
+    ...
+}
+else {
+    if (hora < 18) {
+        boa tarde
+        ...    
+    }
+    else {
+        boa noite
+        ...
+    }
+}
+
+a chaves do if pode ser excluida se tiver somente um comando
+
+
