@@ -138,3 +138,67 @@ else {
 a chaves do if pode ser excluida se tiver somente um comando
 
 
+----------------
+Sintaxe opcional
+
+
+conta =+ (minutos - 100) * 2.0;
+
+
+------------------
+
+Switch case
+
+É utilizada quando se tem várias opções de fluxo a serem tratadas com base no valor de um variável, ao invés de varias estrutura if-else encadeadas, alguns perferem utilizar a estrutura switch case.
+
+
+----------------
+
+Expressão condicional ternária
+
+É uma estrutura condicional opcional ao if-else quando se deseja decidir um valor com base em uma condição.
+
+Sintaxe:
+( condicao) ? valor_se_verdadeiro: valor_Se_falso
+
+exemplos:
+
+( 2 > 4) ? 50: 80 ---> 80
+( 10 != 3) ? "Maria": "Alex" ----> "Maria"
+
+
+Demo
+
+double preco = 13.12;
+double desconto;
+
+if (preco < 20.0) {
+    deconto = preco * 0.1;
+}
+else {
+    desconto = preco * 0.05;
+}
+
+desconto = (preco < 20.0) ? preco * 0.1: preco * 0.05
+
+------------------------
+
+Escopo e inicialização
+
+Checklist
+
+Escopo de uma variável: é a região do programa onde a variável é válida, ou seja, onde ela pode ser referenciada
+
+Uma variável não pode ser usada se não for iniciada.
+
+
+Quando apenas inciamos a variável:
+double valor;
+
+e tentamos usa-la:
+sysout(valor);
+        ----
+O compilador irá retornar um erro, pois a mesma não foi iniciada, apenas declarada.
+
+
+
