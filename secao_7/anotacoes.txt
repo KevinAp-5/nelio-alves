@@ -1,0 +1,74 @@
+Restrições para nomes de variáveis
+
+Não pode começar com dígito: use uma letra ou _
+Não pode usar acentos ou til
+Não pode ter espaços em branco
+Sugestão: use nomes que tenham um significado
+
+Padrão de nome de variáveis: CamelCase
+
+Convenções
+
+Camelcase: lastName
+Pacote
+atributos
+métodos
+variáveis e parametros
+
+Pascal Case: ProductService
+- Classes
+
+
+-------------------
+
+Operadores bitwise
+Operador
+&  -> Operações "E" bit a bit"
+|  -> Operações "OU" bit a bit
+^  -> Operações "OU-exclusivo" bit a bit
+
+Esses operador bit a bit, vai comprar o valores em bit das variáveis e vai aplicar as operações, comparando para valor binário delas
+
+Esse tipo de operações são mais utilizados em baixo nivel
+
+--------------------
+
+Funções interessantes para String
+
+Formatar: toLowerCase(), toUpperCase(), trim()
+Recortar: substring(inicio), substring(inicio, fim)
+substituir: replace(char, char), Replace(String string)
+Buscar: indexOf, LastIndexOf
+str.Split("")
+
+---------------------
+
+COmentários em java(básico)
+
+Podemos estar comentando o código para facilitar e explicar o que o código faz por exemplo
+
+
+/*
+    Este programa calcula as raizes de uma equação
+*/
+
+// Comentário de apenas uma linha
+
+-----------------------
+Funções (sintaxe)
+
+Funções representam um processamento que possui um significado
+
+Math.sqrt(double)
+System.out.println(string)
+
+Principais vantagens: modularização, delegação e reaproveitamento.
+
+Modularização: Dividir nosso projeto em partes, modulos...
+Delegação: delega a lógica de calcular algo, processar etc...
+Reaproveitamento: 
+
+
+Em orientação a objetos, as funções recebem o nome de "métodos"
+
+Exemplo: criar um programa que le 3 numeros inteiros e mostra o maior dele na tela
