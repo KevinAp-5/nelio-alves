@@ -1,0 +1,38 @@
+Estrutura Repetitivas
+
+é um estrutura de controle que executa um bloco de comandos enquanto a condição for verdadeira.
+
+Sintaxe:
+
+while (condicao) {
+    comando 1
+    comando 2
+}
+
+Regra:
+
+V: Executa e volta
+F: pula fora
+
+----------------
+
+Estrutura repetitiva "para"
+
+É uma estrutura de controle que repete um bloco de comandos para um certo intervalo de valores
+
+Quando usar: quando se sabe previamente a quantidade de repetições, ou o intervalo de valores
+
+Sintaxe/regra
+
+inicio = executado somente na primeira vez
+condicao = True executa e volta, Falso pula fora
+incremento = executa toda vez depois de voltar
+
+for (inicio; condicao; incremento) {
+    comando 1
+    comando 2
+}
+
+-----------------------
+
+
