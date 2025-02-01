@@ -1,0 +1,114 @@
+Programação orientada a objetos
+
+Classe
+
+É um tipo estruturado que pode conter(membros)
+    Atributos(dados/campos)
+    metodos(funções/operações)
+
+A classe também pode prover muitos outros recursos, tais como:
+    Construtores
+    Sobrecarga
+    Encapsulamento
+    Herança
+    Polimorfismo
+
+Exemplos:
+
+    Entidades: Produto, Cliente, Triangulo
+    Serviços: ProdutoService, ClienteService, EmailService
+    Controladores: ProdutoController, clienteController
+    Utilitarios: Calculadora, Compactador
+    Outros(views, repositórios, gerenciadores, etc.
+
+Com o uso dos atributos de classes, podemos agora ao invés de criar uma varíavel para cada lado do triangulo, podemos ter uma única variável composta que vai ter na memória o valor desses atributos
+
+Triangle x, y;
+
+x = new Triangle();
+y = new Triangle();
+
+Quando criamos uma nova instancia, é criado na nossa Memoria heap que é a memória dos objetos dinamicos durante a execução, os atributos da classe.
+
+Enquanto na nossa memória stack, a nossa variável x, vai ter como valor o endereço da memória heap, que vai ter os valores dos atributos da classe.
+
+Então a váriavel x, na verdade é uma referencia para os objetos que estão na heap
+
+Classe: é a definição do tipo
+
+Objetos: são instancias da classe
+
+x -> a(3.0), b(4.0), c(5.0)
+
+o x vai ser um ponteiro para os valores da memoria heap
+
+
+Quais são os benefícios de calcular o método dentro da classe Triangulo?
+
+1 - Reaproveitamento de código: Nós eliminamos os código repetidos(calculo das áreas do triangulo x e Y) no programa principal
+
+2 - Delegação de responsabilidade: quem deve ser responsável por saber como calcular a área de um triangulo é o proprio triangulo. A lógica do calculo da área não deve estar em outro lugar.
+
+---------------------
+
+Começando a resolver um segundo problema.
+
+programa de estoque (nome, preço e quantidade em estoque)
+
+Mostrar os dados do produto (nome, preço, quantidade no estoque, valor total no estoque
+
+Realizar uma entrada no estoque e mostrar novamente os dados do produto
+realizar uma saída no estoque e mostrar novamente os dados do produto
+
+Para resolver esse problema, deve criar uma classe conforme o projeto ao lado
+---------------------
+Product
+ - Name: string
+ - Price: double
+ - Quantity: int
+----------------------
+ + TotalValueInStock(): double
+ + AddProduct(quantity: int): void
+ + RemoveProducts(quantity: int): void
+
+----------------------------
+
+Object e to String
+
+Toda classe em java é uma subclasse da classe Object
+
+O object possui os seguintes métodos
+
+getClass - retorna o tipo do object
+equals - Compara se o objeto é igual a outro
+hashCode - retorna um código hash do objeto
+toString - converte o objeto para string
+
+Podemos criar o método toString na nossa classe(subclasse de Object) para podermos printar como esse objeto deve ser em uma string.
+
+-------------------------
+Membros estáticos
+
+membros = atributos e métodos
+
+Membros estáticos
+
+também chamados de membros de classe
+    Em oposião a membros e instancia
+
+São membros que fazem sentido independentemente de objetos.Não precisam de objeto para serem chamados. São chamados a partir do proprio nome da classe.
+
+Aplicações comuns:
+    Classes utilitárias
+    Declaração de constantes
+
+Uma classe possui somente membros estáticos, pode ser uma classe estática também. Essa classe não poderá ser instanciada.
+
+public static final double PI = 3.1415;
+
+Dentro de um método estático, não é possível chamar outros métodos que não seja estáticos. isso faz sentido porque o método estático tem como ideia ser independente de objetos/instancias, e ter um método que depende de instancia dentro dele, não faria sentido.
+Por isso, os métodos estáticos, apenas podem ter outros métodos estáticos dentro do seu corpo, para continuar com a regra estática.
+---------------------
+
+
+
