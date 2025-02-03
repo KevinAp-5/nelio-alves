@@ -1,0 +1,106 @@
+OO
+
+Construtores
+
+É uma operação especial da classe que executa no momento da instanciação do bjeto
+
+Uso comuns:
+    iniciar valores dos atributos
+    Permitir ou obrigar que o objeto receba dados / dependencia no momento de sua instanciação(injeção de dependencias)
+    
+Se um construtor customizado não for especificado, a classe disponibiliza o construtor padrão
+    Product p = new Product();
+
+É possível especificar mais de um construtor na mesma classe(sobrecarga).
+
+Podemos sobreescrever o construtor padrão
+
+public Classe() {}  // que é o nosso construtor vazio
+
+Assim podemos iniciar nossa classe sem o risco de ter atributos vazios, com os construtor
+
+public Classe(String nome, double price, int quantity) {
+    this.nome = nome;
+    this.price = price;
+    this.quantity = quantity;
+}
+
+------------------------
+uso da palavra this
+
+- Referencia para o proprio objeto
+
+- uso comuns:
+    Diferenciar atributos de variáveis locais
+    Passar o proprio objeto como argumento na chamada de um método ou construtor.
+    
+
+Passar o proprio objeto como arumento na chamada de um método u construtor
+
+public class ChessMatch {
+    (...)
+    placeNewPiece('e', 1, new King(board, Color.WHITE, this));
+    (...)
+}
+
+---------------------
+
+Sobrecarga
+
+É um recurso que uma classe possui de oferecer mais de uma operação com o mesmo nome, porém com diferentes listas de parametros.
+
+Um dos usos da sobrecarga é criar vários construtores com diversos tipos de parametros para preencher os atributos
+
+---------------------
+
+Encapsulamento
+
+É um princio que consiste em esconder detalhes da implementação de uma classe, expondo apenas operações seguras e que mantenham os objetos em um estado consistente.
+
+Regra de ouro: O objeto deve sempre estar em um estado consistente, e a propria classe deve garantir isso.
+
+Então, o encapsulamento serve para esconder detalhes da classe, para não expor implementações da classe, métodos e atributos.
+
+Analogia, por exemplo um aparelho de som ele tem seu circuito interno, onde o usuário não consegue ter acesso, para que o usuário não ligue um circuito interno e queime o aparelho. Para garantir o estato consistente e a segurança, é criada o acesso externo do aparelho por meio de botões, etc...
+--------------------
+
+Regra geral basica
+
+Um objeto não deve expor nenhum atributo(modificador de acesso private)
+
+Os atributos devem ser acessados por meio de métodos get e set
+    Padrão javabeans
+
+Padrão para implementação de getters e setters
+
+private String name;
+private double price;
+
+public String getName() {
+    return name;
+}
+
+public void setname(String name) {
+    this.name = name;
+}
+
+public double getPrice() {
+    return price;
+}
+
+public void setPrice(double price) {
+    this.price = price;
+}
+
+-------------------
+
+Modificadores de acesso
+
+private: o membro só pode ser acessado na PROPRIA CLASSE
+(nada): o membro só pode ser acessado nas classes do MESMO PACOTE
+
+protected: O membro só pode ser acessado no MESMO PACOTE, bem como em subclasses de pacotes diferentes
+
+public: o membro é acessado por todas classes(ao menos que ele redisa em um módulo diferente que não exporte o pacote onde ele está)
+
+
