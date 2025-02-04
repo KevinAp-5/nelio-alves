@@ -1,0 +1,395 @@
+Comportamento de memória, arrays, listas
+------------------------
+
+
+Tipos referencia vs tipos valor
+
+Classes são tipos referencia
+
+variaveis cujo tipo são classes não devem ser entendidas como caixas, mas sim "tentáculos" ponteiros para caixas
+
+Product p1, p2;
+
+p1 = new Product("TV", 900.00, 0);
+---------------------------
+Memoria
+
+-------------
+Stack
+0x100358 -> p1
+
+ -> p2 (nada)
+ 
+-------------
+
+Heap
+
+0x100358:
+tv | 900 | 0
+ 
+---------------------------
+
+Nesse caso, a variávei p1 vai ser um ponteiro da memoria stack até a memoria heap
+
+E se a gente fizer p2 = p1;
+
+Como essas variáveis são referencias, a p2 vai passar a apontar aonde a p1 aponta.
+
+então a p2 vai ter o mesmo endereço de memória que a p1.
+
+0x100358 -> p2
+
+Então a p2 vai apontar para os mesmos valores da memória heap, que é onde está armazenado nossos métodos de product
+
+
+------------------------
+
+Valor "null"
+
+Tipos referencia aceitam o valor 'null" que indica que a variável aponta para ninguem.
+
+Por isso é possível inciar uma variável e falar que ela não aponta para ninguem(null)
+
+p2 = null;
+
+--------------------------
+
+Tipo primitivos são tipos valor
+
+Em java, tipos primitivos são tipos valor. Tipos valor são CAIXAS e não ponteiros
+
+double x, y;
+
+Então essas variáveis vão ser caixinhas armazenadas na minha memória stack
+
+devido as variáveis x, y serem do tipo double primitivo, o x, y vão ser caixinhas na stack
+
+E dentro dessas caixinhas, eu vou ter o valor do tipo double, e não uma referencia em algum lugar da memoria heap
+
+x = 10;
+
+y = x;
+
+Como essas variáveis são realmente valores(caixinhas) então o y vai receber uma cópia de x.
+
+Então o valor que está no x, vai ser copiado para o y, logo Y = 10
+
+-------------------------
+
+Valores padrão
+
+Quando colocamos (new) qualquer tipo estruturado (classe ou array), são atribuidos valores padrão aos seus elementos
+
+numeros: 0
+boolean: false
+char; caractere código 0
+objeto: null;
+
+Product p = new product();
+
+memoria:
+
+name = null, price=0.0, quantity=0
+
+
+Tipos referencia vs tipo valor
+
+------------
+Classe 
+Vantagem: usufrui de todos recursos 00
+Variáveis são ponteiros
+Objetos precisam ser instanciadas usando new, ou apontar para um objeto já existente
+Aceita valor null
+y = x;
+"y" passa a apontar para onde X aponta"
+Objetos instanciados no heap
+Objetos não utilizados são deslocados em um momento próximo pelo garbage collector
+--------------------
+
+--------------------
+Tipo primitivo
+Vantagem: é mais simples e performático
+Variáveis são caixas
+Não instancia. Uma vez declarados, estão prontos para uso.
+Não valor valor null;
+Y = X;
+"y recebe uma cópia de X"
+"Objetos" instanciados no stack
+"Objetos são desalocados imediatamente quando seu escopo de execução é finalizado.
+--------------------
+
+Desalocação de memória - Garbage collector e escopo local
+
+Garbage collector
+
+É um processo que automatiza o gerenciamento de memória de um programa em execução
+
+O garbage collector monitora os objetos alocados dinamicamente pelo programa(no heap), desalocando aqueles que não estão mais sendo utilizados.
+
+Exemplo garbage collector
+
+Product p1, p2;
+
+p1 = new Product("tv", 900.00, 0);
+p2 = new Product("mouse", 30.00, 0);
+
+Acima, podemos entender de que na memoria stack, temos os objetos p1 e p2, e na memoria heap, a p1 vai apontar para as variáveis de valor, e a p2 também.
+
+E se fizermos:
+p1 = p2;
+
+Nesse caso, o p1 agora vai apontar para o ponto de referencia da memoria heap da p2.
+
+E o que vai acontecer com os dados na heap do p1??
+
+Esses dados que perderam o seu ponteiro(p1 -> heap) vai ser DESALOCADO pelo garbage collector
+
+
+--------------------------
+
+Desalocação por escopo
+
+void method1() {
+    int x = 10;
+    if (x > 0) {
+        int y = 20;
+    }
+    System.out.println(x);
+}
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        ---------------------
+        Method1 scope
+        x -> 10
+            ---------------------
+            if scope
+            y = 20;
+            ---------------------
+        ---------------------
+    ---------------------
+
+
+    ---------------------
+    Heap
+
+    ---------------------
+
+---------------------
+
+Dentro da nossa stack, a gente vai ter um escopo relacionado ao método.
+
+No nosso método, temos um if, e esse if ele vai ter um escopo dentro do escopo do method1.
+
+Quando a nossa execução sair do if, a variavel y vai sumir.
+
+Nesse caso NÂO È garbage collector, a execução acabou e todas as variáveis do escopo vão sumir
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        ---------------------
+        Method1 scope
+        x -> 10
+        ---------------------
+    ---------------------
+
+
+    ---------------------
+    Heap
+
+    ---------------------
+
+---------------------
+
+
+Da mesma forma quando a execução do nosso método acabar, ele vai ser deletado. Acabou a execução do método, imediatamente as variáveis locais desse método vão ser desalocadas
+---------------------
+Memória
+
+    ---------------------
+    Stack
+
+    ---------------------
+
+
+    ---------------------
+    Heap
+
+    ---------------------
+
+---------------------
+
+-----------------------------------------
+
+Outro exemplo
+
+void method1() {
+    Product p = method2();
+    System.out.println(p.Name);
+}
+
+Product method2() {
+    Product prod = new Product("TV", 900.0, 0);
+    return prod;
+}
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        ---------------------
+        Method1 scope
+        p -> []
+
+        ---------------------
+    ---------------------
+
+
+    ---------------------
+    Heap
+    tv | 900 | 0
+    ---------------------
+
+---------------------
+
+Quando a execução do method1, a variávei p vai chamar o método 2,
+
+Então na memória stack vai ser criado o escopo do method 2
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        ---------------------
+        Method1 scope
+        p -> []
+        
+            ---------------------
+            Method2 scope
+            prod -> heap
+            ---------------------
+        ---------------------
+
+    ---------------------
+
+    ---------------------
+    Heap
+    tv | 900 | 0
+    ---------------------
+
+---------------------
+
+Notemos que na execução do nosso método2, teremos o return prod, que vai nos retorna a REFERENCIA dos valores em heap.
+
+Então quando o return for executado, o seguinte irá acontecer:
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        ---------------------
+        Method1 scope
+        p -> heap
+        
+        ---------------------
+
+    ---------------------
+
+    ---------------------
+    Heap
+    tv | 900 | 0
+    ---------------------
+
+---------------------
+
+Assim que a execução do method2 acabou(retorno de prod), a variável P do method1 vai receber a variável da Heap. Notemos que o subscopo do method1 na stack não existe mais. E agora, o P vai apontar para os valores da heap
+
+Conclusão: Mesmo que o escopo do método é provisório, o valor do heap ainda é mantido. Como a referencia foi retornada e atribuida a variável P, então a heap vai continuar com seus valores.
+
+Então a referencia ainda vai existir.
+
+
+-------------------------
+
+Resumo: Objetos alocados dinamicamente(heap), quando não possuem mais referencia para eles, serão desalocados pelo garbage collector
+
+Variáveis locais são desalocadas imediadamente assim que seu escopo sai de execução.
+
+
+---------------------------------
+
+Vetores
+
+Em programação "vetor" é o nome dado a arranjos unidimensionais
+
+Arranjo(array) é uma estrutura de dados:
+    Homogênea(dados do mesmo tipo)
+    Ordenada(elementos acessados por meio de posições)
+    Alocada de uma vez só, em um bloco contíguo de memória
+
+Vantagens:
+    Acesso imediato aos elementos pela sua posição
+
+Desvantagens:
+    Tamanho fixo
+    Dificuldade para se realizar inserções e deleções.
+
+
+Vamos declarar um vetor de 3 posições de double.
+
+n = 3;
+double[] vect = new double[n];
+
+Note que os valores dos vetores são 0, pois o java por padrão aloca os valores do tipo primitivo double em 0.
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        n = 3
+        vect ->> heap
+    ---------------------
+
+    ---------------------
+    Heap
+    
+    0 -> 0
+    1 -> 0
+    2 -> 0
+    ---------------------
+
+---------------------
+
+Quando trabalhos com valores de referencia no nosso vetor, os valores iniciais do vetores são nulos, então os valores em heap do vetor, o indice vai apontar para outro valor na heap que são os atributos do nosso objetos
+
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        n = 3
+        vect ->> heap
+    ---------------------
+
+    ---------------------
+    Heap
+    
+    0 -> TV    | 900
+    1 -> Fryer | 400
+    2 -> Stove | 800
+    ---------------------
+
+---------------------
+
+Percebe-se que os valores do indices do vetor, não sáo caixinhas, e sim ponteiros para outros valores que sim são caixinhas. Ou seja, temos um "vetor de ponteiros", por conta de objetos realizarem o ponteiro na memoria heap para os valores primitivos.
+
+
