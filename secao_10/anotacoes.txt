@@ -111,7 +111,7 @@ Tipo primitivo
 Vantagem: é mais simples e performático
 Variáveis são caixas
 Não instancia. Uma vez declarados, estão prontos para uso.
-Não valor valor null;
+Não aceita valor null;
 Y = X;
 "y recebe uma cópia de X"
 "Objetos" instanciados no stack
@@ -252,12 +252,11 @@ Memória
 
     ---------------------
     Heap
-    tv | 900 | 0
     ---------------------
 
 ---------------------
 
-Quando a execução do method1, a variávei p vai chamar o método 2,
+Quando a execução do method1 começar, a variávei p vai chamar o método 2,
 
 Então na memória stack vai ser criado o escopo do method 2
 
@@ -391,5 +390,151 @@ Memória
 ---------------------
 
 Percebe-se que os valores do indices do vetor, não sáo caixinhas, e sim ponteiros para outros valores que sim são caixinhas. Ou seja, temos um "vetor de ponteiros", por conta de objetos realizarem o ponteiro na memoria heap para os valores primitivos.
+
+------------------------------
+
+Boxing, Unboxing e wrapper
+
+Boxing
+É o processo de conversão de um objetos tipo valor para um objetos tipo referencia compatível
+
+Quando declaramos uma variável do tipo inteiro, vai ser criado um espaço na memória stack, assim:
+
+int a = 20;
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        a -> 20;
+    ---------------------
+
+    ---------------------
+    Heap
+    ---------------------
+
+---------------------
+
+E se criarmos uma variável do tipo Object, o tipo mais genérico do java.
+
+Object obj = x;
+
+Nossa memória vai ficar assim:
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        a -> 20;
+        obj ->> heap
+    ---------------------
+
+    ---------------------
+    Heap
+        20
+    ---------------------
+---------------------
+
+Quando fazemos isso, passamos o nosso objeto para a memoria heap, isso se chama encaixotamento(boxing)
+
+O que é o Unboxing
+É o processo contrario.
+
+É o processo de conversão de um objeto tipo referencia para um objeto tipo valor compatível.
+
+
+O que será que vai acontecer se a gente fizer:
+
+int y = (int) obj;
+
+---------------------
+Memória
+
+    ---------------------
+    Stack
+        a -> 20;
+        obj ->> heap
+        y -> 20;
+    ---------------------
+
+    ---------------------
+    Heap
+        20
+    ---------------------
+---------------------
+
+
+Wrapper classes
+
+São classes equivalentes aos tipo primitivos
+
+Boxing e unboxing é natural da linguagem
+
+Uso comum: Campos de entidades em sistemas de informação(IMPORTANTE!)
+    Pois tipos referencia(classes) aceitam valor null e usufruem dos recrusos OO
+    
+    
+Object
+    |
+|-------------|-------|
+NUmber     Boolean   Character
+  |
+---------------------
+Byte Short Integer Long Float Double
+
+
+Como foi dito, é muito usado em campos de entidades em alguns sistemas
+
+Exemplo:
+
+public class Product {
+    public String name;
+    public Double price;
+    public Integer quantity;
+}
+
+Suponhamos que no sistema o preço do produto é nulo, essa abordagem só vai funcionar se a gente usar a classe wrapper, que suporta ter o valor nulo, diferentemente do double primitivo que o seu valor padrão é 0.
+
+Com isso, nosso sistema está usufruindo do tipo nulo e dos recursos fornecidos pela orientação a objetos.
+
+--------------------------
+Laço for each
+
+Sintaxe opcional e simplificada para percorrer coleções
+
+Sintaxe:
+
+for (Tipo apelido: coleção) {
+    comando 1
+    comando 2
+}
+
+String[] vetorNomes = new String[] {"Keven", "ana", "tutus"};
+
+For (String nome; vetorNomes) {
+    Sysout(nome);
+}
+
+-------------------------------
+
+Listas
+
+Lista é uma estrutura de dados:
+    Homogenea(dados do mesmo tipo)
+    Ordenada(Elementos acessados por meio de posições)
+    Inicia vazia, e seus elementos são alocados sobdemanda
+    Cada elemento coupa um nó (ou nodo) da lista
+
+Tipo(interface): List
+
+Classes que implementa: ArrayList, LinkedList, etc.
+
+Vantagens:
+    Tamanho variável
+    Facilidade para se realizar inserções e deleções
+    
+Desvantagens:
+    Acesso sequencial aos elemento *
 
 
